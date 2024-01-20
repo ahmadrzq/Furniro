@@ -23,10 +23,10 @@ export default function Navbar() {
                 <img src={logo} alt="" className='w-36' />
             </div>
             <div className="link hidden gap-4">
-                <a href="">Home</a>
-                <a href="">Shop</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
+                <Link className="cursor-pointer" to="/">Home</Link>
+                <Link className="cursor-pointer" to="/shop">Shop</Link>
+                <Link className="cursor-pointer" to="/About">About</Link>
+                <Link className="cursor-pointer" to="/Contact">Contact</Link>
             </div>
             <div className="icon hidden gap-4">
                 <img src={navUser} alt="" />
@@ -34,7 +34,7 @@ export default function Navbar() {
                 <img src={navFavourite} alt="" />
                 <img src={navCart} alt="" />
             </div>
-            <div className={` ${menuOpen ? "right-[-500px]" : "right-0"} listMenu absolute top-0  bg-[#B88E2F] text-white py-10 w-3/4 flex flex-col justify-center transition-all`}>
+            <div className={` ${menuOpen ? "right-0" : "right-[-500px]"} listMenu absolute top-0  bg-[#B88E2F] text-white py-10 w-3/4 flex flex-col justify-center transition-all`}>
                 <div className="buttonClose flex justify-center mb-5">
                     <div onClick={() => {
                         handleMenuOpen()

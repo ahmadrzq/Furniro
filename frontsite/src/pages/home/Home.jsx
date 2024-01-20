@@ -1,5 +1,9 @@
+import FrontLayout from "../../layouts/FrontLayout";
+
 export default function Home() {
     return (
-        <div>Home</div>
+        <FrontLayout>
+            <div>Home</div>
+        </FrontLayout>
     )
 }

@@ -18,23 +18,23 @@ export default function Navbar() {
         setsearchOnBar(!searchOnBar)
     }
     return (
-        <div className="p-4 flex justify-between items-center">
+        <div className="px-4 py-4 sm:px-16 sm:py-7 flex justify-between items-center">
             <div className="logo">
-                <img src={logo} alt="" className='w-36' />
+                <img src={logo} alt="" className='w-36 sm:w-44' />
             </div>
-            <div className="link hidden gap-4">
-                <Link className="cursor-pointer" to="/">Home</Link>
-                <Link className="cursor-pointer" to="/shop">Shop</Link>
-                <Link className="cursor-pointer" to="/About">About</Link>
-                <Link className="cursor-pointer" to="/Contact">Contact</Link>
+            <div className="link hidden sm:flex gap-[80px]">
+                <Link className="cursor-pointer font-semibold text-xl" to="/">Home</Link>
+                <Link className="cursor-pointer font-semibold text-xl" to="/shop">Shop</Link>
+                <Link className="cursor-pointer font-semibold text-xl" to="/about">About</Link>
+                <Link className="cursor-pointer font-semibold text-xl" to="/contact">Contact</Link>
             </div>
-            <div className="icon hidden gap-4">
+            <div className="icon hidden sm:flex gap-[40px]">
                 <img src={navUser} alt="" />
                 <img src={navSearch} alt="" />
                 <img src={navFavourite} alt="" />
                 <img src={navCart} alt="" />
             </div>
-            <div className={` ${menuOpen ? "top-0 bottom-0" : "top-[-500px]"} listMenu fixed right-0 z-10 bg-[#B88E2F] text-white py-10 w-full flex flex-col justify-center transition-all`}>
+            <div className={`${menuOpen ? "top-0 bottom-0" : "top-[-500px]"} listMenu fixed right-0 z-10 bg-[#B88E2F] text-white py-10 w-full flex flex-col justify-center transition-all`}>
                 <div className="buttonClose flex justify-center mb-5">
                     <div onClick={() => {
                         handleMenuOpen()
@@ -56,11 +56,11 @@ export default function Navbar() {
                 <div className="link flex flex-col items-center gap-8 text-2xl font-semibold">
                     <Link className="cursor-pointer" to="/">Home</Link>
                     <Link className="cursor-pointer" to="/shop">Shop</Link>
-                    <Link className="cursor-pointer" to="/About">About</Link>
-                    <Link className="cursor-pointer" to="/Contact">Contact</Link>
+                    <Link className="cursor-pointer" to="/about">About</Link>
+                    <Link className="cursor-pointer" to="/contact">Contact</Link>
                 </div>
             </div>
-            <div className="menu" onClick={handleMenuOpen}>
+            <div className="menu sm:hidden" onClick={handleMenuOpen}>
                 <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="48" d="M88 152h336M88 256h336M88 360h336" /></svg>
             </div>
         </div>

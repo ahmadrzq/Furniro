@@ -34,7 +34,7 @@ export default function Navbar() {
                 <img src={navFavourite} alt="" />
                 <img src={navCart} alt="" />
             </div>
-            <div className={` ${menuOpen ? "top-0" : "top-[-500px]"} listMenu absolute right-0  bg-[#B88E2F] text-white py-10 w-3/4 flex flex-col justify-center transition-all`}>
+            <div className={` ${menuOpen ? "top-0 bottom-0" : "top-[-500px]"} listMenu fixed right-0 z-10 bg-[#B88E2F] text-white py-10 w-full flex flex-col justify-center transition-all`}>
                 <div className="buttonClose flex justify-center mb-5">
                     <div onClick={() => {
                         handleMenuOpen()

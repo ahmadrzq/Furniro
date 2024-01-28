@@ -93,32 +93,51 @@ export default function Home() {
             description: "Inner Piece",
             image: more2
         },
+        {
+            name: "03. Living Room",
+            description: "Inner Piece",
+            image: more3
+        },
+        {
+            name: "04. Bathroom",
+            description: "Inner Piece",
+            image: more1
+        },
+        {
+            name: "05. Dining Room",
+            description: "Inner Piece",
+            image: more2
+        },
+        {
+            name: "06. Bedroom",
+            description: "Inner Piece",
+            image: more3
+        },
     ]
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const nextSlide = () => {
         const nextIndex = (currentSlide + 1) % mores.length;
-        console.log("Next Index:", nextIndex);
         setCurrentSlide(nextIndex);
     };
 
     return (
         <FrontLayout>
             <div>
-                <div className="banner relative w-full mb-5">
-                    <img src={bgBanner} alt="" className="bg-cover " />
-                    <div className="new m-5 py-6 px-3 bg-[#FFF3E3]">
-                        <div className="text-xs mb-2 font-semibold">New Arrival</div>
-                        <div className="text-[#B88E2F] font-bold text-3xl mb-2 ">Discover Our New Collection</div>
-                        <div className="text-xs mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, vel.</div>
-                        <Link to="/product/1" className="bg-[#B88E2F] text-white p-3 inline-block hover:bg-white hover:text-[#B88E2F] hover:outline hover:outline-1 hover:outline-[#B88E2F]">Buy Now</Link>
+                <div className="banner relative w-full lg:h-screen mb-5 lg:mb-10">
+                    <img src={bgBanner} alt="" className="bg-cover lg:w-full" />
+                    <div className="new m-5 py-6 px-3 bg-[#FFF3E3] lg:absolute lg:top-1/2 lg:right-0 lg:lg:w-[500px] lg:h-[350px] lg:px-12 lg:-translate-y-1/2 lg:flex flex-col justify-center">
+                        <div className="text-xs lg:text-sm mb-2 lg:mb-5 font-semibold">New Arrival</div>
+                        <div className="text-[#B88E2F] font-bold text-3xl lg:text-[3rem] mb-2 lg:mb-5 lg:leading-none">Discover Our New Collection</div>
+                        <div className="text-xs lg:text-xl mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, vel.</div>
+                        <Link to="/product/1" className="bg-[#B88E2F] text-white p-3 inline-block hover:bg-white hover:text-[#B88E2F] hover:outline hover:outline-1 hover:outline-[#B88E2F] lg:w-1/3 lg:font-bold text-center lg:p-5 lg:text-xl">Buy Now</Link>
                     </div>
                 </div>
-                <div className="category p-5 mb-5">
-                    <h1 className="text-center mb-2 font-bold text-xl">Browse The Range</h1>
-                    <p className="text-center mb-2 text-xs text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam molestias temporibus natus.</p>
-                    <div className="grid grid-cols-2 gap-1">
+                <div className="category px-5 py-5 lg:px-28 mb-5 lg:mb-10">
+                    <h1 className="text-center mb-2 font-bold text-xl lg:text-2xl">Browse The Range</h1>
+                    <p className="text-center mb-2 lg:mb-5 text-xs lg:text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam molestias temporibus natus.</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-5">
                         <div className="box">
                             <img src={category1} alt="" className="mb-2" />
                             <div className="text-center font-semibold">Dining</div>
@@ -134,9 +153,9 @@ export default function Home() {
 
                     </div>
                 </div>
-                <div className="products p-5 mb-5">
-                    <h1 className="text-center mb-2 font-bold text-xl">Our Products</h1>
-                    <div className="product grid grid-cols-2 gap-1 mb-5">
+                <div className="products px-5 py-5 lg:px-28 mb-5 lg:mb-10">
+                    <h1 className="text-center mb-2 lg:mb-5 font-bold text-xl lg:text-2xl">Our Products</h1>
+                    <div className="product grid grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-5 mb-5">
                         {
                             products.map((product, index) => {
                                 return (
@@ -145,23 +164,23 @@ export default function Home() {
                                             <img src={product.image} alt="" />
                                         </div>
                                         <div className="description p-3">
-                                            <div className="name font-semibold text-lg mb-1">{product.name}</div>
-                                            <div className="desc text-xs mb-2">{product.description}</div>
+                                            <div className="name font-semibold text-lg lg:text-xl mb-1">{product.name}</div>
+                                            <div className="desc text-xs lg:text-sm mb-2">{product.description}</div>
                                             <div className="pricess flex flex-col">
-                                                <div className="price font-semibold">Rp {product.price}</div>
-                                                <div className="sale text-gray-400 line-through"> {product.sale ? `Rp` + product.sale : ``}</div>
+                                                <div className="price lg:text-xl font-semibold">Rp {product.price}</div>
+                                                <div className="sale text-gray-400 lg:text-xl line-through"> {product.sale ? `Rp` + product.sale : ``}</div>
                                             </div>
                                         </div>
                                         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-500">
                                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity w-full text-center" >
-                                                <div className="mb-5">
-                                                    <Link to={''} className=" bg-white text-sm text-[#B88E2F] font-semibold p-2">Add To Cart</Link>
+                                                <div className="mb-5 lg:mb-10">
+                                                    <Link to={''} className=" bg-white text-sm text-[#B88E2F] font-semibold p-2 lg:p-4 lg:text-[1.1rem]">Add To Cart</Link>
                                                 </div>
                                                 <div className="flex flex-col items-center gap-5 text-white font-semibold text-sm">
-                                                    <Link to={''} className="flex gap-1">
+                                                    <Link to={''} className="flex gap-1 lg:text-xl">
                                                         <img src={share} alt="" />Share</Link>
-                                                    <Link to={''} className="flex gap-1"><img src={comparison} alt="" />Compare</Link>
-                                                    <Link to={''} className="flex gap-1"><img src={like} alt="" />Like</Link>
+                                                    <Link to={''} className="flex gap-1 lg:text-xl"><img src={comparison} alt="" />Compare</Link>
+                                                    <Link to={''} className="flex gap-1 lg:text-xl"><img src={like} alt="" />Like</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,23 +194,23 @@ export default function Home() {
                         <Link to="/product" className="bg-white outline outline-1 outline-[#B88E2F] text-[#B88E2F] p-3 inline-block hover:bg-[#B88E2F] hover:text-white">Show More</Link>
                     </div>
                 </div>
-                <div className="more bg-[#FCF8F3] p-5 flex flex-col">
-                    <div className="flex flex-col mb-5">
-                        <div className="font-bold text-2xl mb-2">50+ Beautiful rooms inspiration</div>
-                        <div className="text-xs text-gray-500 mb-2" >Our designer already made a lot of beautiful prototipe of rooms that inspire you</div>
+                <div className="more bg-[#FCF8F3] px-5 py-5 lg:px-28 flex flex-col lg:flex-row lg:items-center">
+                    <div className="flex flex-col mb-5 lg:me-10">
+                        <div className="font-bold text-2xl lg:text-3xl mb-2 lg:mb-5">50+ Beautiful rooms inspiration</div>
+                        <div className="text-xs lg:text-[1.2rem] leading-none text-gray-500 mb-2 lg:mb-5" >Our designer already made a lot of beautiful prototipe of rooms that inspire you</div>
                         <div>
                             <Link to="/product" className="bg-[#B88E2F] text-white p-3 inline-block hover:bg-white hover:text-[#B88E2F] hover:outline hover:outline-1 hover:outline-[#B88E2F]">See More</Link>
                         </div>
                     </div>
-                    <div className="slider relative w-full">
+                    <div className="slider relative lg:max-w-[50%] flex">
                         <div className="overflow-x-scroll no-scrollbar">
                             <div className="flex gap-2">
                                 {
                                     mores.map((more, index) => {
                                         return (
-                                            <div className={`relative ${index === currentSlide ? '' : 'hidden'}`}
-                                            style={{ minWidth: '300px', width: '300px' }}
-                                             key={index}>
+                                            <div className={`relative ${index === currentSlide ? '' : 'hidden lg:block'}`}
+                                                style={{ minWidth: '300px', width: '300px' }}
+                                                key={index}>
                                                 <div className="w-[300px] h-[400px] relative">
                                                     <img src={more.image} alt="" className="w-[280px] h-[400px] bg-cover bg-no-repeat" />
                                                     <div className="absolute bottom-5 left-5 flex items-end">
@@ -210,9 +229,9 @@ export default function Home() {
                                 }
                             </div>
                         </div>
-                        <div className="absolute top-1/2 right-[-40px] transform -translate-x-1/2 -translate-y-1/2 flex justify-center">
+                        <div className="absolute lg:hidden z-50 top-1/2 right-[-40px] transform -translate-x-1/2 -translate-y-1/2 flex justify-center">
                             <button
-                                className="w-10 h-10 flex justify-center items-center bg-white text-white rounded-full"
+                                className="w-10 h-10 flex justify-center items-center bg-white text-white rounded-full shadow-2xl"
                                 onClick={nextSlide}
                             >
                                 <img src={arrow2} alt="" />

@@ -34,7 +34,7 @@ export default function Navbar() {
                 <img className="cursor-pointer" src={navFavourite} alt="" />
                 <img className="cursor-pointer" src={navCart} alt="" />
             </div>
-            <div className={`${menuOpen ? "top-0 bottom-0" : "top-[-500px]"} listMenu fixed right-0 z-10 bg-[#B88E2F] text-white py-10 w-full flex flex-col justify-center transition-all`}>
+            <div className={`${menuOpen ? "top-0 bottom-0 transition-all" : "top-[-500px] transition-all"} listMenu fixed right-0 z-10 bg-[#B88E2F] text-white py-10 w-full flex flex-col justify-center transition-all`}>
                 <div className="buttonClose flex justify-center mb-5">
                     <div onClick={() => {
                         handleMenuOpen()
@@ -54,10 +54,10 @@ export default function Navbar() {
                     <button className="bg-white text-[#B88E2F] px-2 py-1 font-semibold" type="submit">Search</button>
                 </form>
                 <div className="link flex flex-col items-center gap-8 text-2xl font-semibold">
-                    <Link className="cursor-pointer" to="/">Home</Link>
-                    <Link className="cursor-pointer" to="/shop">Shop</Link>
-                    <Link className="cursor-pointer" to="/about">About</Link>
-                    <Link className="cursor-pointer" to="/contact">Contact</Link>
+                    <Link className="cursor-pointer" onClick={()=> handleMenuOpen()} to="/">Home</Link>
+                    <Link className="cursor-pointer" onClick={()=> handleMenuOpen()} to="/shop">Shop</Link>
+                    <Link className="cursor-pointer" onClick={()=> handleMenuOpen()} to="/about">About</Link>
+                    <Link className="cursor-pointer" onClick={()=> handleMenuOpen()} to="/contact">Contact</Link>
                 </div>
             </div>
             <div className="menu lg:hidden" onClick={handleMenuOpen}>

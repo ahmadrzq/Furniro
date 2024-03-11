@@ -3,17 +3,6 @@ import bgBanner from "../../assets/img/banner-homepage.png";
 import category1 from "../../assets/img/category-home-1.png";
 import category2 from "../../assets/img/category-home-2.png";
 import category3 from "../../assets/img/category-home-3.png";
-import product1 from "../../assets/img/product-home-1.png";
-import product2 from "../../assets/img/product-home-2.png";
-import product3 from "../../assets/img/product-home-3.png";
-import product4 from "../../assets/img/product-home-4.png";
-import product5 from "../../assets/img/product-home-5.png";
-import product6 from "../../assets/img/product-home-6.png";
-import product7 from "../../assets/img/product-home-7.png";
-import product8 from "../../assets/img/product-home-8.png";
-import more1 from "../../assets/img/more-home-1.png";
-import more2 from "../../assets/img/more-home-2.png";
-import more3 from "../../assets/img/more-home-3.png";
 import share from "../../assets/img/share icon.svg";
 import comparison from "../../assets/img/compare icon.svg";
 import like from "../../assets/img/like icon.svg";
@@ -21,100 +10,9 @@ import arrow from "../../assets/img/arrow-right.svg";
 import arrow2 from "../../assets/img/arrow-right2.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { mores, products } from "../../services/data";
 
 export default function Home() {
-    const products = [
-        {
-            name: "Syltherine",
-            description: "Stylish cafe chair",
-            price: 2500000,
-            sale: 3500000,
-            image: product1
-        },
-        {
-            name: "Leviosa",
-            description: "Stylish cafe chair",
-            price: 2500000,
-            sale: "",
-            image: product2
-        },
-        {
-            name: "Lolito",
-            description: "Luxury big sofa",
-            price: 7000000,
-            sale: 14000000,
-            image: product3
-        },
-        {
-            name: "Respira",
-            description: "Outdoor bar table and stool",
-            price: 500000,
-            sale: "",
-            image: product4
-        },
-        {
-            name: "Grifo",
-            description: "Night Lamp",
-            price: 1500000,
-            sale: "",
-            image: product5
-        },
-        {
-            name: "Muggo",
-            description: "Small mug",
-            price: 150000,
-            sale: "",
-            image: product6
-        },
-        {
-            name: "Pingky",
-            description: "Cute bed set",
-            price: 7000000,
-            sale: 14000000,
-            image: product7
-        },
-        {
-            name: "Potty",
-            description: "Minimalist flower pot",
-            price: 500000,
-            sale: "3500000",
-            image: product8
-        },
-    ]
-
-    const mores = [
-        {
-            name: "01. Bed Room",
-            description: "Inner Piece",
-            image: more1
-        },
-        {
-            name: "02. Kitchen",
-            description: "Inner Piece",
-            image: more2
-        },
-        {
-            name: "03. Living Room",
-            description: "Inner Piece",
-            image: more3
-        },
-        {
-            name: "04. Bathroom",
-            description: "Inner Piece",
-            image: more1
-        },
-        {
-            name: "05. Dining Room",
-            description: "Inner Piece",
-            image: more2
-        },
-        {
-            name: "06. Bedroom",
-            description: "Inner Piece",
-            image: more3
-        },
-    ]
-
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const nextSlide = () => {

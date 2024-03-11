@@ -41,7 +41,7 @@ export default function Footer() {
             </div>
             <div className="line w-full h-[3px] bg-gray-300 mb-5"></div>
             <div className="text-center">
-                2023 furino. All rights reverved
+                2023 Furniro. All rights reverved
             </div>
         </div>
     )
